@@ -21,6 +21,8 @@ import {
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import { SearchDriverOptions } from "@elastic/search-ui";
 
+// TODO: moved searchKey, engineName, endpointBase to env variable
+
 const connector = new AppSearchAPIConnector({
   searchKey: "search-ov7kb5qh27pae116uspivvzu",
   engineName: "newsdex-engine",
