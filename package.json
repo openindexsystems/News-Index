@@ -1,7 +1,6 @@
 {
   "name": "elastic-search",
   "version": "0.1.0",
-  "homepage": "https://openindexsystems.github.io/News-Index",
   "private": true,
   "dependencies": {
     "@elastic/react-search-ui": "^1.19.0",
