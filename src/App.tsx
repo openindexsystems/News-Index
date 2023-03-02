@@ -1,4 +1,3 @@
-import styles from "./initial.module.scss";
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import React from "react";
 import {
@@ -56,9 +55,9 @@ const config: SearchDriverOptions = {
 export default function App() {
   return (
     <>
-      <div style={{width: '100%', display: 'flex', justifyContent: 'center' }}>
-        <div className={styles.logo}>
-          <div className={styles["logo-3"]}>
+      <div>
+        <div>
+          <div>
 
               <h3>Open</h3>
               <p>Index Systems</p>

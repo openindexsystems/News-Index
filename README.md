@@ -7,4 +7,3 @@ To start server locally
 Pushing to main branch on github will trigger auto build in vercel.app, viewable:
 - https://news-index.vercel.app
 - https://news-index-i7bwq0is2-dev-openindexsys.vercel.app/
-
