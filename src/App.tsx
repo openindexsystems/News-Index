@@ -1,6 +1,10 @@
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+
+import { useState } from "react";
 import {
   ErrorBoundary,
   Facet,
@@ -32,6 +36,7 @@ const config: SearchDriverOptions = {
   alwaysSearchOnInitialLoad: false,
   apiConnector: connector,
   hasA11yNotifications: true,
+  debug: false,
   searchQuery: {
     result_fields: {
       title: {
@@ -52,7 +57,11 @@ const config: SearchDriverOptions = {
   },
 };
 
+
 export default function App() {
+
+  const [searchActive, setSearchActive] = useState(false);
+
   return (
     <>
       <div className="news-index">
@@ -60,15 +69,21 @@ export default function App() {
           <div>
             <h3>Open</h3>
             <p>Index Systems</p>
+
+            {!searchActive && (<>
+              initial load
+            </>)}
+
+            {searchActive && (<>
+              search payload
+            </>)}
           </div>
         </div>
       </div>
 
-
       {/* <SearchProvider config={config}>
         <SearchBox />
       </SearchProvider> */}
-
 
       <SearchProvider config={config}>
         <WithSearch
@@ -77,9 +92,6 @@ export default function App() {
           })}
         >
           {({ wasSearched }) => {
-
-
-
             return (
               <div className="es">
                   <ErrorBoundary>
