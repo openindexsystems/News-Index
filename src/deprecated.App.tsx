@@ -1,9 +1,5 @@
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
-
 import { useState } from "react";
 import {
   ErrorBoundary,
