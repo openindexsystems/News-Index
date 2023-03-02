@@ -1,5 +1,6 @@
 import AppSearchAPIConnector from "@elastic/search-ui-app-search-connector";
 import React from "react";
+
 import {
   ErrorBoundary,
   Facet,
@@ -28,7 +29,7 @@ const connector = new AppSearchAPIConnector({
 });
 
 const config: SearchDriverOptions = {
-  alwaysSearchOnInitialLoad: true,
+  alwaysSearchOnInitialLoad: false,
   apiConnector: connector,
   hasA11yNotifications: true,
   searchQuery: {
@@ -63,6 +64,12 @@ export default function App() {
         </div>
       </div>
 
+
+      {/* <SearchProvider config={config}>
+        <SearchBox />
+      </SearchProvider> */}
+
+
       <SearchProvider config={config}>
         <WithSearch
           mapContextToProps={({ wasSearched }) => ({
@@ -70,12 +77,16 @@ export default function App() {
           })}
         >
           {({ wasSearched }) => {
+
+
+
             return (
               <div className="es">
                   <ErrorBoundary>
+
                     <Layout
                       header={<SearchBox debounceLength={0} />}
-                      sideContent={<div></div>}
+                      // sideContent={<div></div>}
                       bodyContent={
                         <Results
                           titleField="title"
