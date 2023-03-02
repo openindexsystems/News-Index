@@ -6,6 +6,7 @@ import {
   SearchProvider,
   SearchBox,
   Results,
+  Result,
   PagingInfo,
   ResultsPerPage,
   Paging,
@@ -19,8 +20,6 @@ import {
 } from "@elastic/react-search-ui-views";
 import "@elastic/react-search-ui-views/lib/styles/styles.css";
 import { SearchDriverOptions } from "@elastic/search-ui";
-
-// TODO: moved searchKey, engineName, endpointBase to env variable
 
 const connector = new AppSearchAPIConnector({
   searchKey: "search-ov7kb5qh27pae116uspivvzu",
@@ -45,7 +44,7 @@ const config: SearchDriverOptions = {
     },
     search_fields: {
       title: { weight: 2 },
-      body_content: { weight: 1 },
+      body_content: { weight: 2 },
     },
     disjunctiveFacets: [""],
     facets: {},
@@ -55,13 +54,11 @@ const config: SearchDriverOptions = {
 export default function App() {
   return (
     <>
-      <div>
+      <div className="news-index">
         <div>
           <div>
-
-              <h3>Open</h3>
-              <p>Index Systems</p>
-
+            <h3>Open</h3>
+            <p>Index Systems</p>
           </div>
         </div>
       </div>
@@ -74,29 +71,29 @@ export default function App() {
         >
           {({ wasSearched }) => {
             return (
-              <div className="App">
-                <ErrorBoundary>
-                  <Layout
-                    header={<SearchBox debounceLength={0} />}
-                    sideContent={<div></div>}
-                    bodyContent={
-                      <Results
-                        titleField="title"
-                        urlField="nps_link"
-                        thumbnailField="image_url"
-                        shouldTrackClickThrough
-                      />
-                    }
-                    bodyHeader={
-                      <React.Fragment>
-                        {wasSearched && <PagingInfo />}
-                        {wasSearched && <ResultsPerPage />}
-                      </React.Fragment>
-                    }
-                    bodyFooter={<Paging />}
-                  />
-                </ErrorBoundary>
-              </div>
+              <div className="es">
+                  <ErrorBoundary>
+                    <Layout
+                      header={<SearchBox debounceLength={0} />}
+                      sideContent={<div></div>}
+                      bodyContent={
+                        <Results
+                          titleField="title"
+                          urlField="nps_link"
+                          thumbnailField="image_url"
+                          shouldTrackClickThrough
+                        />
+                      }
+                      bodyHeader={
+                        <React.Fragment>
+                          {wasSearched && <PagingInfo />}
+                          {wasSearched && <ResultsPerPage />}
+                        </React.Fragment>
+                      }
+                      bodyFooter={<Paging />}
+                    />
+                  </ErrorBoundary>
+                </div>
             );
           }}
         </WithSearch>
