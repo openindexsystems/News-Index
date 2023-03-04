@@ -10,27 +10,35 @@ const Home = () => {
   return (
     <>
       <main>
-        <div className="news-index">
-          <StaticHeader />
+        <div className={styles['news-index']}>
+          <section>
+            <StaticHeader />
+          </section>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              console.log(searchQuery);
-              window.location = `/search?q=${encodeURIComponent(searchQuery)}`;
-            }}
-          >
-            <input
-              placeholder="Search"
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
+          <section className={styles['search-form']}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                console.log(searchQuery);
+                window.location = `/search?q=${encodeURIComponent(
+                  searchQuery
+                )}`;
               }}
-            />
-            <button type="submit"> Submit</button>
-          </form>
+            >
+              <input
+                placeholder="Search"
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                }}
+              />
+              <button type="submit"> Submit</button>
+            </form>
+          </section>
 
-          <Footer />
+          <section>
+            <Footer />
+          </section>
         </div>
       </main>
     </>
