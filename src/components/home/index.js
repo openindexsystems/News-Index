@@ -18,7 +18,7 @@ const Home = () => {
 
           <section className={styles["search-form"]}>
             <section>
-              <img src="/images/assets/news-index.png" />
+              <img src="/images/assets/newsindex.png" />
             </section>
 
             <section className={styles["input-field"]}>
