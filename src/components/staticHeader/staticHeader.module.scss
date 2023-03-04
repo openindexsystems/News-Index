@@ -5,6 +5,10 @@
   .logo {
     padding-left: 1em;
 
+    sup {
+      color: var(--black);
+    }
+
     a {
       text-decoration: none;
       display: flex;
