@@ -46,7 +46,7 @@ const Home = () => {
             <section className={styles.slogan}>Real News. Real Fast</section>
           </section>
 
-          <section>
+          <section className={styles.footer}>
             <Footer />
           </section>
         </div>
