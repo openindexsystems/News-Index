@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./Home.module.scss";
 import StaticHeader from "../staticHeader";
 import Footer from "../Footer";
+import SearchIcon from '@mui/icons-material/Search';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,30 +11,39 @@ const Home = () => {
   return (
     <>
       <main>
-        <div className={styles['news-index']}>
+        <div className={styles["news-index"]}>
           <section>
             <StaticHeader />
           </section>
 
-          <section className={styles['search-form']}>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                console.log(searchQuery);
-                window.location = `/search?q=${encodeURIComponent(
-                  searchQuery
-                )}`;
-              }}
-            >
-              <input
-                placeholder="Search"
-                value={searchQuery}
-                onChange={(e) => {
-                  setSearchQuery(e.target.value);
+          <section className={styles["search-form"]}>
+            <section>
+              <img src="/images/assets/news-index.png" />
+            </section>
+
+            <section className={styles["input-field"]}>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  console.log(searchQuery);
+                  window.location = `/search?q=${encodeURIComponent(
+                    searchQuery
+                  )}`;
                 }}
-              />
-              <button type="submit"> Submit</button>
-            </form>
+              >
+                <input
+                  type="text"
+                  placeholder="Search"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                  }}
+                />
+                <button type="submit"><SearchIcon style={{color: '#FFFFFF'}} fontSize='inherit' /></button>
+              </form>
+            </section>
+
+            <section className={styles.slogan}>Real News. Real Fast</section>
           </section>
 
           <section>
