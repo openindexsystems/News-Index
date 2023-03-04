@@ -9,6 +9,7 @@ const Home = () => {
       <div className="news-index">
         <div>
           <div>
+            <img src='/images/logo/OISCLogo150.png' />
             <h3>Open</h3>
             <p>Index Systems</p>
             <>
