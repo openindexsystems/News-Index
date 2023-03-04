@@ -8,7 +8,7 @@ const StaticHeader = () => {
     <>
       <header className={styles.header}>
         <section className={styles.logo}>
-          <Link href="/">
+          <Link to="/">
             <section>Powered by</section>
             <section>
               <sup>TM</sup>
