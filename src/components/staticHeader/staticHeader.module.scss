@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  .logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    section {
+      &:nth-child(1) {
+        color: var(--theme-dark-gray);
+        font-size: 20px;
+      }
+
+      &:nth-child(2) {
+        align-self: flex-start;
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .burger-menu {
+    margin: 18px 18px 0 0;
+  }
+}
