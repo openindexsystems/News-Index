@@ -1,0 +1,31 @@
+@import '../../css/base/mixins.scss';
+
+.nav {
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 100vw;
+
+  @include breakpoint(medium) {
+    width: 50vw;
+  }
+
+  height: 100vh;
+  z-index: 2;
+  background-color: var(--theme-beige);
+  box-shadow: -6px 0px 32px rgb(0 0 0 / 20%)
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 30px;
+  padding: 4em 2em;
+
+  a {
+    color: var(--theme-dark-purple);
+    font-family: "Helvetica 65 Medium", sans-serif;
+    font-weight: 600;
+  }
+}
