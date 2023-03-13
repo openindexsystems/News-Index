@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   height: calc(100vh - 230px);
+  background-position: center -120px;
+  background-image: url('../../../public/images/assets/gradbg.png');
+  background-repeat: no-repeat;
+
+  @include breakpoint(medium) {
+    background-size: 100%;
+  }
 
   .search-form {
     flex-grow: 1;

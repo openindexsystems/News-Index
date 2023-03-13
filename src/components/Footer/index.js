@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className={styles.footer}>
 
         <section className={styles.socials}>
-          <section style={{textAlign: 'center', marginBottom: '10px'}}>
+          <section className={styles.label}>
             Follow us on
           </section>
           <section className={styles.list}>
