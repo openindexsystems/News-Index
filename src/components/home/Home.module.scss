@@ -1,7 +1,9 @@
+@import '../../css/base/mixins.scss';
+
 .news-index {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 230px);
 
   .search-form {
     flex-grow: 1;
@@ -10,6 +12,31 @@
     align-items: center;
     gap: 60px;
     justify-content: center;
+
+
+    .newsindex {
+      display: flex;
+      width: 330px;
+      position: relative;
+
+      @include breakpoint(medium) {
+        width: initial;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      span {
+        position: relative;
+        left: -6px;
+        top: 10px;
+
+        @include breakpoint(medium) {
+          top: 20px
+        }
+      }
+    }
 
     .input-field {
       width: 100%;
@@ -32,6 +59,11 @@
         transition: 0.5s;
         outline: none;
         font-size: 30px;
+        border-right: none;
+
+        @include breakpoint(medium) {
+          // border-right: inherit;
+        }
       }
       // input[type=text]:focus {
       //   border: 3px solid #555;
@@ -43,11 +75,32 @@
         border: none;
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
-        background-color: var(--theme-dark-purple);
         display: inline-flex;
         align-items: center;
         padding: 0 24px 0 20px;
         font-size: 46px;
+
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: white;
+        border-color: var(--theme-dark-purple);
+        border-width: 3px;
+        border-style: solid;
+        border-left: none;
+
+        svg {
+          fill: var(--theme-dark-purple);
+;
+        }
+
+        @include breakpoint(medium) {
+          background-color: var(--theme-dark-purple);
+
+          svg {
+            fill: var(--white)
+          }
+        }
+        
 
         svg {
           transform: rotate(90deg);
@@ -59,6 +112,36 @@
       font-size: 30px;
       color: var(--theme-light-purple);
       padding-bottom: 10vh;
+    }
+  }
+}
+
+.logo {
+  @include breakpoint(medium) {
+    display: none;
+
+  }
+  sup {
+    color: var(--black);
+  }
+
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    section {
+      &:nth-child(1) {
+        color: var(--theme-light-gray);
+        font-size: 20px;
+      }
+
+      &:nth-child(3) {
+        align-self: flex-start;
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: 600;
+      }
     }
   }
 }

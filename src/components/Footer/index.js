@@ -6,7 +6,40 @@ const Footer = () => {
   return (
     <>
       <footer className={styles.footer}>
-        <section className={styles.links}>
+
+        <section className={styles.socials}>
+          <section style={{textAlign: 'center', marginBottom: '10px'}}>
+            Follow us on
+          </section>
+          <section className={styles.list}>
+            <Link to='/'>
+              <img src='/images/social/social_twitter.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_facebook.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_instagram.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_rumble.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_truthsocial.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_parler.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_publicsq.png' />
+            </Link>
+            <Link to='/'>
+              <img src='/images/social/social_l.png' />
+            </Link>
+          </section>
+        </section>
+
+        <section className={`${styles["links"]} ${styles["web-only"]}`}>
           <Link to='/about'>About</Link>
           <Link to='/privacy'>Privacy</Link>
           <Link to='/transparency'>Transparency</Link>

@@ -15,10 +15,10 @@ const StaticHeader = () => {
           <Link to="/">
             <section>Powered by</section>
             <section>
-              <sup>TM</sup>
+              <img src="/images/logo/OISCLogo150.png" />
             </section>
             <section>
-              <img src="/images/logo/OISCLogo150.png" />
+              <sup>TM</sup>
             </section>
           </Link>
         </section>

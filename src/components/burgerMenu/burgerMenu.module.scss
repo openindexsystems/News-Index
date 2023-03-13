@@ -24,7 +24,7 @@
   font-size: 30px;
   padding: 2em 3em 0 0;
   border: 1px solid var(--theme-light-gray);
-  height: 80vh;
+  height: calc(100vh - 230px);
 
   @include breakpoint(medium) {
     height: auto;

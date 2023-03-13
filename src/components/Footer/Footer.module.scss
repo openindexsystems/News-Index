@@ -1,5 +1,7 @@
+@import '../../css/base/mixins.scss';
+
 .footer {
-  height: 100px;
+  height: 230px;
   background-color: var(--theme-beige);
   display: flex;
   flex-direction: column;
@@ -8,13 +10,20 @@
   gap: 14px;
 
   .links {
-    display: flex;
     gap: 40px;
 
     a {
       color: var(--theme-dark-purple);
       font-family: "Helvetica 65 Medium", sans-serif;
       font-weight: 600;
+    }
+
+    &.web-only {
+      display: none;
+
+      @include breakpoint(medium) {
+        display: flex;
+      }
     }
   }
 
@@ -23,5 +32,23 @@
     font-family: 'Helvetica 35 Thin', sans-serif;
     font-weight: 100;
     color: initial;
+  }
+
+  .socials {
+    color: var(--theme-dark-purple);
+    font-family: "Helvetica 65 Medium", sans-serif;
+    font-weight: 600;
+
+    .list {
+      display: flex;
+      width: 244px;
+      flex-wrap: wrap;
+
+      a {
+        flex-basis: 25%;
+        text-align: center;
+        padding: 10px 0;
+      }
+    }
   }
 }

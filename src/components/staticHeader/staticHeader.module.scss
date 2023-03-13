@@ -1,8 +1,16 @@
+@import '../../css/base/mixins.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
 
   .logo {
+    display: none;
+
+    @include breakpoint(medium) {
+      display: block;
+    }
+
     padding-left: 1em;
 
     sup {
@@ -16,11 +24,11 @@
 
       section {
         &:nth-child(1) {
-          color: var(--theme-dark-gray);
+          color: var(--theme-light-gray);
           font-size: 20px;
         }
 
-        &:nth-child(2) {
+        &:nth-child(3) {
           align-self: flex-start;
           margin-top: 20px;
           font-size: 12px;
@@ -31,6 +39,15 @@
   }
 
   .burger-menu {
+
+    flex-grow: 1;
+    text-align: right;
+
+    @include breakpoint(medium) {
+      flex-grow: initial;
+      text-align: initial;
+    }
+
     margin: 18px 18px 0 0;
   }
 }
