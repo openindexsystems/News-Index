@@ -8,6 +8,11 @@
   justify-content: center;
   align-items: center;
   gap: 14px;
+  padding-bottom: 3em;
+
+  @include breakpoint(medium) {
+    padding-bottom: initial;
+  }
 
   .links {
     gap: 40px;
@@ -28,6 +33,19 @@
   }
 
   .copyright {
+    position: absolute;
+    bottom: 0px;
+    padding: 1em;
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+
+    @include breakpoint(medium) {
+      position: initial;
+      background-color: initial;
+      width: initial;
+    }
+
     font-size: 14px;
     font-family: 'Helvetica 35 Thin', sans-serif;
     font-weight: 100;
